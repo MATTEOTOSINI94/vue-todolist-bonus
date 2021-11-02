@@ -66,6 +66,10 @@ window.addEventListener("DOMContentLoaded", function (){
                     return el.controllo
 
                 })
+            },
+
+            deleteElementFromDeleteList(index){
+                 this.listaElementiSelezionati().splice(index,1)
             }
 
         }
