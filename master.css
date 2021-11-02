@@ -1,0 +1,16 @@
+
+.box-my{
+    position: relative;
+}
+
+.list-group-item-border{
+    padding: 0 3px;
+    background: red;
+    height: 100%;
+    position: absolute;
+    left: 0;
+}
+.color-box{
+    height: 39px
+;
+}
