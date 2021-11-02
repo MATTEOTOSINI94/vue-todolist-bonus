@@ -45,7 +45,9 @@
 
               <div class="list-item pt-5" >
                   <h2>Lista elementi Selezionati</h2>
-                <div class="list-group-item d-flex align-items-center py-3 box-my" v-for="(elemento,i) in listaElementiSelezionati()">
+                  <input class="form-check-input" type="checkbox"v-model="elementiSelect">
+                  <p class="d-inline"> Visutalizza solo gli elementi selezionati </p>
+                <div class="list-group-item d-flex align-items-center py-3 box-my" v-for="(elemento,i) in listaElementiSelezionati()" :class=" elemento.controllo === true ? `text-decoration-line-through` : `` ">
                     <div class="list-group-item-border" :style="`background-color: `+elemento.color+`;`"></div>
                     <input class="form-check-input me-2 " type="checkbox" >
                     

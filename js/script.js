@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", function (){
 
             newTask:"",
             newColor:"",
+            elementiSelect:false
             
         },
 
@@ -63,14 +64,15 @@ window.addEventListener("DOMContentLoaded", function (){
             },
             listaElementiSelezionati(){
                 return this.taskToDo.filter(el=>{
-                    return el.controllo
+                    if (this.elementiSelect===true){
+                        return el.controllo===true
+                    }
+                    return !el.controllo
 
                 })
             },
 
-            deleteElementFromDeleteList(index){
-                 this.listaElementiSelezionati().splice(index,1)
-            }
+         
 
         }
 
