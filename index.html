@@ -30,9 +30,9 @@
                   <button class="btn btn-outline-secondary" type="button" @click="generateNewElement">Invia</button>
                 </div>
               </div>
-              <div class="text-center" v-if="taskToDo.length === 0"> <h2>Benvenuto inizia la tua spesa</h2></div>
+              <div class="text-center" v-if="taskToDo.length === 0"><h2>Benvenuto inizia la tua spesa</h2></div>
               <div class="list-item">
-                  <div class="list-group-item d-flex align-items-center py-3 box-my" v-for="(elemento,i) in taskToDo" :class=" elemento.controllo === true ? `text-decoration-line-through` : `` ">
+                  <div class="list-group-item d-flex align-items-center py-3 box-my" v-for="(elemento,i) in listaFiltrata()" :class=" elemento.controllo === true ? `text-decoration-line-through` : `` ">
                     <div class="list-group-item-border" :style="`background-color: `+elemento.color+`;`"></div>
                     <input class="form-check-input me-2 " type="checkbox" v-model="elemento.controllo" >
                     
@@ -41,7 +41,19 @@
                     
                     <button type="button" class="btn-close ms-auto" aria-label="Close" @click="deleteElement(i)"></button>
                   </div>
-                   
+              </div>
+
+              <div class="list-item pt-5" >
+                  <h2>Lista elementi Selezionati</h2>
+                <div class="list-group-item d-flex align-items-center py-3 box-my" v-for="(elemento,i) in listaElementiSelezionati()">
+                    <div class="list-group-item-border" ></div>
+                    <input class="form-check-input me-2 " type="checkbox" >
+                    
+
+                    ciao
+                    
+                    <button type="button" class="btn-close ms-auto" aria-label="Close" @click="deleteElement(i)"></button>
+                  </div>
               </div>
 
             

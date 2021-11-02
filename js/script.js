@@ -21,7 +21,8 @@ window.addEventListener("DOMContentLoaded", function (){
             }],
 
             newTask:"",
-            newColor:""
+            newColor:"",
+            
         },
 
         methods:{
@@ -41,6 +42,7 @@ window.addEventListener("DOMContentLoaded", function (){
                 this.taskToDo.push({ 
                     text:this.newTask.toLowerCase(),
                     color:this.newColor,
+                    
                 
                 })
                 this.newTask = "";
@@ -50,6 +52,20 @@ window.addEventListener("DOMContentLoaded", function (){
             deleteElement(indiceElementi){
                 this.taskToDo.splice(indiceElementi, 1);
 
+            },
+
+            listaFiltrata(){
+               return this.taskToDo.filter(elementFiltred =>{
+                //    mettendo = false non funziona perchè non riesce una volta creaato l'elemento non ha la chiave controllo fino a quando non vien selezionato quindi basta mettere solamente la negazione
+               return !elementFiltred.controllo  
+                    
+                });
+            },
+            listaElementiSelezionati(){
+                return this.taskToDo.filter(el=>{
+                    return el.controllo
+
+                })
             }
 
         }
